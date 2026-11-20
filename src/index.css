@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+body {
+  font-family: 'Poppins',
+}
+
+.header{
+  animation: fade-in 0.5s ease-in;
+}
+
+@keyframes fade-in{
+  0%{
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .loginInput {
+    @apply outline-none w-full px-4 py-2 mb-3 border border-gray-300 rounded-lg ;
+  }
+}

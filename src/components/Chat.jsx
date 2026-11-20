@@ -3,6 +3,7 @@ import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp, where 
 import { auth, db, logOut } from "../firebase-config"
 import { ArrowLeft, Ghost, LogOut, Send, User, Users } from "lucide-react"
 import Cookies from "universal-cookie"
+const cookies = new Cookies()
 
 
 function Chat({ room, setRoom, setIsAuth }) {
@@ -79,7 +80,7 @@ function Chat({ room, setRoom, setIsAuth }) {
               onClick={async () => {
                   try {
                     await logOut()
-                    Cookies.remove("auth-token")
+                    cookies.remove("auth-token")
                     setIsAuth(false)
                   } catch (error) {
                     console.error("Could not log out:", error)
